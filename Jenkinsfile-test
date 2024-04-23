@@ -1,0 +1,17 @@
+pipeline{
+    agent any
+    stages{
+        stage('Test') {
+            steps {
+                echo '你好'
+            }
+        }
+    }
+    stages{
+        stage('Ha') {
+            steps {
+                echo '成功'
+            }
+        }
+    }
+}
