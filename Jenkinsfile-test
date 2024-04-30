@@ -1,16 +1,19 @@
 pipeline{
     agent any
-    stages{
-        stage('Test') {
+    stages {
+        stage('Build') {
             steps {
-                echo '你好'
+                echo 'Building..'
             }
         }
-    }
-    stages{
-        stage('Ha') {
+        stage('Test') {
             steps {
-                echo '成功'
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
             }
         }
     }
