@@ -1,19 +1,15 @@
-pipeline{
+pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('Clone Repository') {
             steps {
-                echo 'Building..'
+                // 克隆指定的Git仓库和分支
+                checkout([$class: 'GitSCM', branches: [[name: '$GIT_BRANCH']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '5530f635-c165-4fb2-822a-9e587ccce6ef', url: 'https://github.com/lllqbb/beego-test.git']]])
             }
         }
-        stage('Test') {
+        stage('Execute Shell Script') {
             steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                // 执行位于项目中特定目录下的shell脚本
             }
         }
     }
