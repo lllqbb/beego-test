@@ -11,7 +11,7 @@ pipeline {
             steps {
                 // 执行位于项目中特定目录下的shell脚本
                 sh 'chmod +x shell/build.sh'
-                sh 'shell/build.sh'
+                // sh 'shell/build.sh'
             }
         }
     }
